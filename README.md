@@ -1,6 +1,7 @@
 # tyzen
 Blockchain records of Tyzen Network
-
+### Ports
+- ```RPC : 2332```
 ### Website
 www.tyzen.io (Still on development)
 
