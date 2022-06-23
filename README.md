@@ -12,7 +12,7 @@ www.tyzen.io (Still on development)
 
 ### Support the developments
 - BTC : ```1NQ46aP2wgotA9dJs4U8jBv4a1cR9qF8DA```
-- ETH : ``````0x0a61ec3546ff49bd3b9cb6a5d08397fb32ba1b91```
+- ETH : ```0x0a61ec3546ff49bd3b9cb6a5d08397fb32ba1b91```
 - LTC : ```LWxo5EXMJnrYGokcjC4K3RJ3sEcwCTGrw8```
 - DOGE : ```DK8oQXVSsXCTu6vRhiAn8waF3v3hVsNg9G```
 - TRX : ```TMdaz1ZSRQACYaVZMAC4F6nsQsuYXz54Hc```
