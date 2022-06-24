@@ -56,7 +56,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "What a currency ? its Tyzen TZN";
+    const char* pszTimestamp = "CryotoNoon Community October 29 2020 Bitcoin reaches its highest price in 2020";
     const CScript genesisOutputScript = CScript() << ParseHex("045c943f203a366efeb5a39839496a0220576341e34ea863150c47d44f657aebe53c5060d9a8f8a8cd083fd0d39c4b78d8f743492c2ecc8643f702d5e94d3b1092") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -137,13 +137,13 @@ public:
 		vSeeds.push_back(CDNSSeedData("node9.tyzen.io", "node9.tyzen.io"));
 		vSeeds.push_back(CDNSSeedData("node10.tyzen.io", "node10.tyzen.io"));
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,53);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,102);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,66);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,128);
         base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,92);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,205);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x03)(0xb4)(0x73)(0x34).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x03)(0xb4)(0x73)(0xb9).convert_to_container<std::vector<unsigned char> >();
-
+		
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
         fMiningRequiresPeers = true;
@@ -153,12 +153,12 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  0, uint256S("0x59ceec40a8afa8bd23bbb5fff924b47cf5a320afa3c2de6f78cab06fdfe83427"))
+            (  0, uint256S("0x000000fd190d1f1f7685c1873e51cd8f1a543d9f7af17a7fe9a6fa90321b80f8"))
         };
 
         chainTxData = ChainTxData{
             // Data as of block b44bc5ae41d1be67227ba9ad875d7268aa86c965b1d64b47c35be6e8d5c352f4 (height 1155626).
-            1603935375, // * UNIX timestamp of last known number of transactions
+            1656012959, // * UNIX timestamp of last known number of transactions
             0,  // * total number of transactions between genesis and that timestamp
                     //   (the tx=... number in the SetBestChain debug.log lines)
             0.01     // * estimated number of transactions per second after that timestamp
