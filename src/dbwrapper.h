@@ -1,5 +1,4 @@
 // Copyright (c) 2012-2016 The Bitcoin Core developers
-// Copyright (c) 2022 The Tyzen.io Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 

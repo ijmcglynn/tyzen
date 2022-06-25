@@ -1,34 +1,34 @@
-Name "@PACKAGE_NAME@ (@WINDOWS_BITS@-bit)"
+Name "Tyzen Core (-bit)"
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION @CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_REVISION@
-!define COMPANY "@PACKAGE_NAME@ project"
-!define URL @PACKAGE_URL@
+!define VERSION 1.0.0
+!define COMPANY "Tyzen Core project"
+!define URL https://www.tyzen.io/
 
 # MUI Symbol Definitions
-!define MUI_ICON "C:\Users\Administrator\Desktop\tyzen-main\tyzen3-packed\tyzen3\share/pixmaps/bitcoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "C:\Users\Administrator\Desktop\tyzen-main\tyzen3-packed\tyzen3\share\pixmaps\nsis-wizard.bmp"
+!define MUI_ICON "/root/tyzen3/tyzen3/share/pixmaps/bitcoin.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/root/tyzen3/tyzen3/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "C:\Users\Administrator\Desktop\tyzen-main\tyzen3-packed\tyzen3\share\pixmaps\nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/root/tyzen3/tyzen3/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER "@PACKAGE_NAME@"
-!define MUI_FINISHPAGE_RUN $INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@
+!define MUI_STARTMENUPAGE_DEFAULTFOLDER "Tyzen Core"
+!define MUI_FINISHPAGE_RUN $INSTDIR\tyzen-qt
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "C:\Users\Administrator\Desktop\tyzen-main\tyzen3-packed\tyzen3\share\pixmaps\nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/root/tyzen3/tyzen3/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
 !include Sections.nsh
 !include MUI2.nsh
-!if "@WINDOWS_BITS@" == "64"
+!if "" == "64"
 !include x64.nsh
 !endif
 
@@ -48,8 +48,8 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile @abs_top_srcdir@/@PACKAGE_TARNAME@-${VERSION}-win@WINDOWS_BITS@-setup.exe
-!if "@WINDOWS_BITS@" == "64"
+OutFile /root/tyzen3/tyzen3/Tyzen.io-${VERSION}-win-setup.exe
+!if "" == "64"
 InstallDir $PROGRAMFILES64\Tyzen
 !else
 InstallDir $PROGRAMFILES\Tyzen
@@ -58,8 +58,8 @@ CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion ${VERSION}.@CLIENT_VERSION_BUILD@
-VIAddVersionKey ProductName "@PACKAGE_NAME@"
+VIProductVersion ${VERSION}.1
+VIAddVersionKey ProductName "Tyzen Core"
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
@@ -73,13 +73,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File C:\Users\Administrator\Desktop\Tyzen Wallet@BITCOIN_GUI_NAME@@EXEEXT@
-    File /oname=readme.txt @abs_top_srcdir@/doc/README_windows.txt
+    File /root/tyzen3/tyzen3/release/tyzen-qt
+    File /oname=COPYING.txt /root/tyzen3/tyzen3/COPYING
+    File /oname=readme.txt /root/tyzen3/tyzen3/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File @abs_top_srcdir@/release/@BITCOIN_DAEMON_NAME@@EXEEXT@
-    File @abs_top_srcdir@/release/@BITCOIN_CLI_NAME@@EXEEXT@
+    File /root/tyzen3/tyzen3/release/tyzend
+    File /root/tyzen3/tyzen3/release/tyzen-cli
     SetOutPath $INSTDIR\doc
-    File /r @abs_top_srcdir@/doc\*.*
+    File /r /root/tyzen3/tyzen3/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd
@@ -90,8 +91,8 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\@PACKAGE_NAME@ (testnet, @WINDOWS_BITS@-bit).lnk" "$INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@" "-testnet" "$INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@" 1
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\tyzen-qt
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Tyzen Core (testnet, -bit).lnk" "$INSTDIR\tyzen-qt" "-testnet" "$INSTDIR\tyzen-qt" 1
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
@@ -102,10 +103,10 @@ Section -post SEC0001
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" UninstallString $INSTDIR\uninstall.exe
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
-    WriteRegStr HKCR "@PACKAGE_TARNAME@" "URL Protocol" ""
-    WriteRegStr HKCR "@PACKAGE_TARNAME@" "" "URL:Tyzencoin"
-    WriteRegStr HKCR "@PACKAGE_TARNAME@\DefaultIcon" "" $INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@
-    WriteRegStr HKCR "@PACKAGE_TARNAME@\shell\open\command" "" '"$INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@" "%1"'
+    WriteRegStr HKCR "Tyzen.io" "URL Protocol" ""
+    WriteRegStr HKCR "Tyzen.io" "" "URL:Tyzencoin"
+    WriteRegStr HKCR "Tyzen.io\DefaultIcon" "" $INSTDIR\tyzen-qt
+    WriteRegStr HKCR "Tyzen.io\shell\open\command" "" '"$INSTDIR\tyzen-qt" "%1"'
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -123,7 +124,7 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@
+    Delete /REBOOTOK $INSTDIR\tyzen-qt
     Delete /REBOOTOK $INSTDIR\COPYING.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
@@ -135,7 +136,7 @@ Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\@PACKAGE_NAME@ (testnet, @WINDOWS_BITS@-bit).lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Tyzen Core (testnet, -bit).lnk"
     Delete /REBOOTOK "$SMSTARTUP\Tyzen.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
@@ -144,7 +145,7 @@ Section -un.post UNSEC0001
     DeleteRegValue HKCU "${REGKEY}" Path
     DeleteRegKey /IfEmpty HKCU "${REGKEY}\Components"
     DeleteRegKey /IfEmpty HKCU "${REGKEY}"
-    DeleteRegKey HKCR "@PACKAGE_TARNAME@"
+    DeleteRegKey HKCR "Tyzen.io"
     RmDir /REBOOTOK $SMPROGRAMS\$StartMenuGroup
     RmDir /REBOOTOK $INSTDIR
     Push $R0
@@ -157,7 +158,7 @@ SectionEnd
 # Installer functions
 Function .onInit
     InitPluginsDir
-!if "@WINDOWS_BITS@" == "64"
+!if "" == "64"
     ${If} ${RunningX64}
       ; disable registry redirection (enable access to 64-bit portion of registry)
       SetRegView 64

@@ -1,5 +1,4 @@
 // Copyright (c) 2012-2016 The Bitcoin Core developers
-// Copyright (c) 2022 The Tyzen.io Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -47,7 +46,7 @@ const std::string CLIENT_NAME("TyzenCore");
 #define GIT_ARCHIVE 1
 #ifdef GIT_ARCHIVE
 #define GIT_COMMIT_ID "7299f6dfa848"
-#define GIT_COMMIT_DATE "Tue, 23 June 2022 03:11:44 +0000"
+#define GIT_COMMIT_DATE "Tue, 25 Jul 2017 03:11:44 +0000"
 #endif
 
 #define BUILD_DESC_WITH_SUFFIX(maj, min, rev, build, suffix) \
