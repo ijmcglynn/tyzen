@@ -1,6 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
-// Copyright (c) 2022 The Tyzen.io Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -342,7 +341,7 @@ struct TxMempoolInfo
 enum class MemPoolRemovalReason {
     UNKNOWN = 0, //! Manually removed or unknown reason
     EXPIRY,      //! Expired from mempool
-    SIZELIMIT,   //! Removed in size limiting
+    SIZTZNMIT,   //! Removed in size limiting
     REORG,       //! Removed for reorganization
     BLOCK,       //! Removed for block
     CONFLICT,    //! Removed for conflict with in-block transaction
