@@ -1,7 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
-// Copyright (c) 2022 The Tyzen.io Core developers
-// Copyright (c) 2022 The Tyzen.io Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -49,10 +47,10 @@ struct ChainTxData;
 struct PrecomputedTransactionData;
 struct LockPoints;
 
-/** Default for DEFAULT_WHITELISTRELAY. */
-static const bool DEFAULT_WHITELISTRELAY = true;
-/** Default for DEFAULT_WHITELISTFORCERELAY. */
-static const bool DEFAULT_WHITELISTFORCERELAY = true;
+/** Default for DEFAULT_WHITTZNSTRELAY. */
+static const bool DEFAULT_WHITTZNSTRELAY = true;
+/** Default for DEFAULT_WHITTZNSTFORCERELAY. */
+static const bool DEFAULT_WHITTZNSTFORCERELAY = true;
 /** Default for -minrelaytxfee, minimum relay fee for transactions */
 static const unsigned int DEFAULT_MIN_RELAY_TX_FEE = 0 ;
 //! -maxtxfee default
