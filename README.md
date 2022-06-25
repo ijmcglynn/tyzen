@@ -87,4 +87,10 @@ Read more : https://docs.tyzen.io
 - TRX : ```TMdaz1ZSRQACYaVZMAC4F6nsQsuYXz54Hc```
 - USDT : ```0x0a61ec3546ff49bd3b9cb6a5d08397fb32ba1b91``` (BEP20/ERC20) / ```TMdaz1ZSRQACYaVZMAC4F6nsQsuYXz54Hc``` (TRC20) | Another token also accepted
 
+### CREDITS
+- [The Bitcoin Core Developers](https://github.com/bitcoin/bitcoin)
+- [The Litecoin Core Developers](https://github.com/litecoin-project/litecoin)
+- [The Yenten Core Developers](https://github.com/yentencoin/yenten)
+
+
 *The cryptocurrency for everyone - Feel free to contributing on the Tyzen Development progress*
