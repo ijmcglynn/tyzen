@@ -33,10 +33,10 @@ With this opportunity in mind, our creation of Tyzen and the TZN Platform appear
 # Tyzen website information:
 &nbsp; | &nbsp;
 ------ | ------
-**Main Website:** | www.tyzen.io (*Still on development*)
-**Block Explorer:** | http://explorer.tyzen.io
+**Main Website:** | www.tyzen.io
+**Block Explorer:** | https://explorer.tyzen.io
 **Wikipedia:** | https://wiki.tyzen.io (*Still on development*)
-**Documentation:** | https://docs.tyzen.io (*Still on development*)
+**Documentation:** | https://docs.tyzen.io (*Not full release*)
 **Node List:** | https://node.tyzen.io (*Submit your full node supports@tyzen.io or contact admin on discord*)
 **Image Assets:** | https://assets.tyzen.io
 
@@ -48,6 +48,18 @@ With this opportunity in mind, our creation of Tyzen and the TZN Platform appear
 **Telegram:** | https://t.me/tyzeninfo
 **Youtube:** | https://www.youtube.com/channel/UCgTpiS9mqkkRqrT_iBnQ17w
 
+# Bots:
+&nbsp; | &nbsp;
+------ | ------
+**Discord Wallet bot:** | TyzenWallet#5687
+**Server invite link:** | https://discordapp.com/oauth2/authorize?client_id=992486849815781488&scope=bot&permissions=68672
+
+# Mining Pools:
+&nbsp; | &nbsp;
+------ | ------
+**Zpool.ca:** | ```-a yescryptR16 -o stratum+tcp://yescryptR16.mine.zpool.ca:6333 -u TZN_ADDRESS -p c=TZN,zap=TZN```
+**pool.Rplant.xyz:** | ```-a yescryptr16  -o stratum+tcps://stratum-asia.rplant.xyz:17044 -u YourAddress.WorkerName```
+**MiningPoolStats.stream:** | https://miningpoolstats.stream/tyzen
 
 # Get started
 ```sudo apt-get update```
