@@ -36,7 +36,7 @@ With this opportunity in mind, our creation of Tyzen and the TZN Platform appear
 **Main Website:** | www.tyzen.io
 **Block Explorer:** | https://explorer.tyzen.io
 **Wikipedia:** | https://wiki.tyzen.io (*Still on development*)
-**Documentation:** | https://docs.tyzen.io (*Not full release*)
+**Documentation:** | https://docs.tyzen.live (*Not full release*)
 **Node List:** | https://node.tyzen.io (*Submit your full node supports@tyzen.io or contact admin on discord*)
 **Image Assets:** | https://assets.tyzen.io
 
@@ -89,7 +89,7 @@ With this opportunity in mind, our creation of Tyzen and the TZN Platform appear
 
 ```make```
 
-Read more : https://docs.tyzen.io
+Read more : https://docs.tyzen.live
 
 ### Support the developments
 - BTC : ```1NQ46aP2wgotA9dJs4U8jBv4a1cR9qF8DA```
